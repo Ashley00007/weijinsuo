@@ -1,0 +1,349 @@
+@borderColor: #ccc;
+@aColor: #666;
+@mainColor: #e92322;
+
+/* 头部区域样式*/
+#header {
+   text-align: center;
+   border: 1px solid @borderColor; 
+    .rows>div {
+        border-right: 1px solid @borderColor; 
+        height: 40px;
+        line-height: 40px;
+        &:first-child:hover a>img {
+            display: block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &:last-child {
+            border-right: none;
+        }
+       >a {
+            position: relative;
+            color: @aColor;
+            &:hover {
+                text-decoration: none;
+            }
+            img {
+                position: absolute;
+                display: none;
+                z-index: 9;
+            }
+       }
+       >button {
+           background-color: @mainColor;
+           margin-right: 15px;
+       }
+      
+   }
+}
+
+/* 导航区域样式*/
+#nav {
+    background: #fff;
+    width: 100%;
+    top: 0px;
+    margin-bottom: 0px;
+    z-index: 1;
+    .navbar-header{
+        button {
+            margin-top: 23px;
+            margin-bottom: 23px;
+        }
+        .navbar-brand {
+           font-size: 32px;
+           line-height: 50px;
+           .icon-icon {
+               color: @mainColor;
+           }
+           .icon-logo {
+               color: #000;
+           }
+        }
+    }
+    .navbar-nav {
+        li {
+            a{
+                line-height: 50px;
+            }
+            &.active a{
+                background-color: #fff;
+                border-bottom: 2px solid @mainColor;
+            }
+            &:hover {
+                border-bottom: 2px solid @mainColor;
+            }
+        }
+    }
+}
+
+/* 轮播图的样式*/
+#slide{
+  .carousel-inner {
+      .large-img {
+        width: 100%;
+        height: 410px;
+        display: block;
+        background-position: center;
+      }
+      .small-img {
+          img {
+                width: 100%;
+          }
+      }
+  }  
+}
+
+/*特色广告样式*/
+#feature {
+    padding: 25px 0px;
+    .col {
+        margin-bottom: 10px;
+        .media {
+            >a {
+                color: @aColor;
+                &:hover {
+                    text-decoration: none;
+                    color: @mainColor;
+                }
+            }
+        }
+    }
+}
+
+/*立即预定样式*/ 
+#booking {
+    border-top: 1px solid @borderColor;
+    border-bottom: 1px solid @borderColor;
+    padding: 20px 0px;
+    .pull-left {
+        p {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+/*商品推荐样式*/ 
+#products {
+    background-color: #f0f0f0;
+    padding: 40px 0px;
+    .ul-wapper {
+        width: 100%;
+        overflow: auto;
+        .nav-tabs {
+            width: 560px;
+            li{
+                &.active {
+                    a {
+                        background-color: transparent;
+                        border-bottom: 3px solid @mainColor;
+                    }
+                }
+                a {
+                    color: #333;
+                    font-size: 15px;
+                    border: none;
+                    &:hover {
+                        background-color: transparent;
+                    }
+                }
+    
+            }
+          
+        }
+    }
+
+    .tab-content {
+        #product1 {
+           .col {
+               &:first-child {
+                   .productBox {
+                    background-color: @mainColor;
+                    color: #fff;
+                    position: relative;
+                    &::before {
+                        content: "\e915";
+                        font-family: "itcast";
+                        font-size:30px;
+                        position: absolute;
+                        top: -6px;
+                        left: 0px;
+                    }
+                   }  
+               }
+                .productBox {
+                    background-color: #fff;
+                    margin-top: 20px;
+                    display: flex;
+                    .left {
+                        flex: 1;
+                        padding: 10px;
+                        height: 160px;
+                        h4 {
+                            text-align: center;
+                            margin-bottom: 20px;
+                        }
+                        .price {
+                            margin-bottom: 10px;
+                            .pull-left {
+                                p {
+                                    margin-bottom: 0px; 
+                                }
+                            }
+                            .pull-right {
+                                p {
+                                    margin-bottom: 0px;
+                                    text-align: right;
+                                } 
+                            }    
+                        }
+                    }
+                    .right {
+                        width: 120px;
+                        height: 160px;
+                        border-left: 1px dashed @borderColor;
+                        position: relative;
+                        padding: 45px 0;
+                        p {
+                            margin-bottom: 0px;
+                            text-align: center;
+                            strong {
+                                font-size: 30px;
+                            }
+                        }
+                        .tooltips {
+                            text-align: center;
+                            margin-bottom: 2px;
+                            button {
+                                padding: 5px;
+                                border-radius: 0px;
+                                font-size: 12px;
+                                line-height: 12px;
+                                &:first-of-type {
+                                    color: @mainColor;
+                                    border-color: @mainColor;
+                                }
+                                &:last-of-type {
+                                    color: green;
+                                    border-color: green;
+                                }
+                            }
+                        }
+                        &::before, &::after {
+                            position: absolute;
+                            content: "";
+                            width: 20px;
+                            height: 20px;
+                            border-radius: 50%;
+                            background-color: #f0f0f0;
+                            left: -10px;
+                        }
+                        &::before {
+                            top: -10px
+
+                        }
+                        &::after {
+                            bottom: -10px;
+                        }
+                    }    
+                }
+           }
+        }
+    }
+}
+
+/*新闻样式*/
+#news {
+    padding: 40px 0;
+    .container {
+        .row {
+            .col {
+                >h4 {
+                    text-align: center;
+                    line-height: 40px;
+                    border-bottom: 1px dashed @borderColor;
+                    position: relative;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 10px;
+                        height: 10px;
+                        border: 1px solid @borderColor;
+                        border-radius: 50%;
+                        right: -10px;
+                        bottom: -5px;
+                    }
+                }
+                >ul {
+                    border: 0;
+                    >li {
+                        @media (max-width:991px) {
+                            width: 25%;
+                            a {
+                                margin: 0 auto;
+                            }
+                        }
+                        &.active {
+                            a {
+                                background-color: @mainColor;
+                            }
+                        }
+                        >a {
+                          border: 0; 
+                          font-size: 25px;
+                          color: @borderColor;
+                          width: 50px;
+                          height: 50px;
+                          line-height: 50px;
+                          display: block;
+                          border-radius: 50%; 
+                          text-align: center;
+                          margin-bottom: 10px;
+                          padding: 0;
+                          &:hover {
+                            background-color: @mainColor;
+                          }
+                        }
+                    }
+                }
+                >.tab-content {
+                    ul {
+                        margin: 0;
+                        padding:0;
+                        li {
+                            list-style: none;
+                            padding: 10px 0;
+                            a {
+                                color: @aColor;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+/*合作伙伴样式*/
+#partner {
+    padding: 20px 0px 40px;
+    h3 {
+        text-align: center;
+    }
+    .logo {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        a {
+            color: @aColor;
+            font-size: 60px;
+            text-decoration: none;
+            margin-right: 20px;
+            &:hover {
+                color: @mainColor;
+            }
+        }
+    }
+}
